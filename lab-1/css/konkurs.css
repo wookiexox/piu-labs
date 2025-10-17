@@ -1,0 +1,182 @@
+body {
+  background-color: #f5f5f5;
+  color: var(--text-main);
+  margin: 0;
+  padding: 2rem;
+}
+
+/* Niewidzialny checkbox */
+.theme-toggle-checkbox {
+  display: none;
+}
+
+/* Główny kontener formularza */
+.contest-form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--bg-form);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  color: var(--text-main);
+
+  /* Motyw formularza - JASNY */
+  --bg-form: #ffffff;
+  --text-main: #333;
+  --border-color: #ccc;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+
+  color-scheme: light;
+}
+
+/* Przełączenie motywu formularza - CIEMNY */
+.theme-toggle-checkbox:checked ~ .contest-form-container {
+  --bg-form: #1e1e1e;
+  --text-main: #e0e0e0;
+  --border-color: #555;
+  --shadow-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Przycisk powrót*/
+.back-btn {
+  display: inline-block;
+  background-color: #2866ad;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.back-btn:hover {
+  background-color: #164174;
+  text-decoration: none;
+}
+
+/* Nagłówek i ikona księżyca */
+header {
+  max-width: 500px;
+  margin: 0 auto 2rem auto;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+#theme-switcher {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Etykiety oraz pole formularza */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='date'],
+input[type='number'],
+select {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Inne elementy formularza */
+input[type='color'] {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--border-color);
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+fieldset {
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+fieldset legend {
+  font-weight: bold;
+  padding: 0 0.5rem;
+}
+
+fieldset label {
+  font-weight: normal;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+}
+
+.radio-option label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+.radio-option input[type='radio'] {
+  margin-right: 0.5rem;
+}
+
+.radio-option:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
+.consent-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.consent-section input[type='checkbox'] {
+  margin-right: 0.5rem;
+}
+
+.consent-section label {
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button[type='submit']:hover {
+  background-color: #45a049;
+}
+
+/* Zmiana kursora na pointer dla klikalnych elementów */
+button[type='submit'],
+input[type='color'],
+input[type='radio'],
+input[type='checkbox'],
+input[type='date']::-webkit-calendar-picker-indicator,
+input[list]::-webkit-calendar-picker-indicator,
+select,
+#theme-switcher,
+.consent-section > label,
+fieldset > label {
+  cursor: pointer;
+}
