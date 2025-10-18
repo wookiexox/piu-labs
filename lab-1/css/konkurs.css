@@ -29,12 +29,65 @@ body {
   color-scheme: light;
 }
 
-/* Przełączenie motywu formularza - CIEMNY */
+/* Domyślny wygląd ikon w motywie jasnym */
+.icon-sun {
+  display: none;
+}
+
+.icon-moon {
+  display: inline-block;
+}
+
+/* Przełączenie na motyw ciemny z trybu jasnego */
 .theme-toggle-checkbox:checked ~ .contest-form-container {
   --bg-form: #1e1e1e;
   --text-main: #e0e0e0;
   --border-color: #555;
   --shadow-color: rgba(255, 255, 255, 0.1);
+  color-scheme: dark;
+}
+
+.theme-toggle-checkbox:checked ~ header .icon-sun {
+  display: inline-block;
+}
+
+.theme-toggle-checkbox:checked ~ header .icon-moon {
+  display: none;
+}
+
+/* Nadpisanie motywu gdy system preferuje motyw ciemny */
+@media (prefers-color-scheme: dark) {
+  .contest-form-container {
+    --bg-form: #1e1e1e;
+    --text-main: #e0e0e0;
+    --border-color: #555;
+    --shadow-color: rgba(255, 255, 255, 0.1);
+    color-scheme: dark;
+  }
+
+  .icon-sun {
+    display: inline-block;
+  }
+
+  .icon-moon {
+    display: none;
+  }
+
+  .theme-toggle-checkbox:checked ~ .contest-form-container {
+    --bg-form: #ffffff;
+    --text-main: #333;
+    --border-color: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    color-scheme: light;
+  }
+
+  .theme-toggle-checkbox:checked ~ header .icon-sun {
+    display: none;
+  }
+
+  .theme-toggle-checkbox:checked ~ header .icon-moon {
+    display: inline-block;
+  }
 }
 
 /* Przycisk powrót*/
