@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 1rem;
+    color: #333;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+/* header */
+.theme-picker {
+    background-color: #fff8dc;
+    border: 2px solid #e67E22;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.theme-picker legend {
+    font-weight: bold;
+    padding: 0 0.5rem;
+}
+
+.theme-picker label {
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+/* główny kontener */
+.container {
+    background-color: #fff8dc;
+    border: 2px solid #e67e22;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex; /* flexbox domyślnie włączony */
+    gap: 20px;
+    flex-wrap: wrap; /* zawijanie domyślnie włączone */
+}
+
+/* pojedynczy element (wspólne) */
+.item {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1 1 auto; /* minimalna szerokość */
+}
+
+
+/* ==== NIEBIESKI ==== */
+body:has(input[value="blue"]:checked) .item {
+    background-color: blue;
+}
+
+body:has(input[value="blue"]:checked) .container {
+    justify-content: space-between;
+}
+
+body:has(input[value="blue"]:checked) .item {
+    flex: 0 0 30%; /* stała szerokość 30% na dużych ekranach */
+}
+
+@media (max-width: 1000px) {
+    body:has(input[value="blue"]:checked) .item {
+        flex: 0 0 100%;
+    }
+}
+
+
+
+/* ==== CZERWONY ==== */
+body:has(input[value="red"]:checked) .item {
+    background-color: red;
+}
+
+body:has(input[value="red"]:checked) .item:nth-child(1)::after {
+    content: "\a(Jestem większy i na środku!)";
+    white-space: pre;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+/* kolejność ułożenia */
+body:has(input[value="red"]:checked) .item:nth-child(1) {order: 2;}
+body:has(input[value="red"]:checked) .item:nth-child(2) {order: 1;}
+body:has(input[value="red"]:checked) .item:nth-child(3) {order: 1;}
+body:has(input[value="red"]:checked) .item:nth-child(4) {order: 3;}
+body:has(input[value="red"]:checked) .item:nth-child(5) {order: 3;}
+
+@media (min-width: 1001px) {
+    body:has(input[value="red"]:checked) .container {
+        flex-wrap: nowrap;
+    }
+
+    body:has(input[value="red"]:checked) .item:nth-child(1) {flex: 2;}
+    body:has(input[value="red"]:checked) .item:not(:nth-child(1)) {flex: 1;}
+}
+
+@media (max-width: 1000px) {
+    body:has(input[value="red"]:checked) .item:nth-child(1) {
+        flex-basis: 100%;
+    }
+
+    body:has(input[value="red"]:checked) .item:not(:nth-child(1)) {
+        flex-basis: 45%;
+    }
+
+    body:has(input[value="red"]:checked) .container {
+        justify-content: center;
+    }
+}
+
+
+
+/* ==== ZIELONY ==== */
+body:has(input[value="green"]:checked) .item {
+    background-color: green;
+}
+
+body:has(input[value="green"]:checked) .item:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body:has(input[value="green"]:checked) .item:nth-child(1)::before {content: "😄";}
+body:has(input[value="green"]:checked) .item:nth-child(1)::after {content: "😄";}
+
+@media (min-width: 1001px) {
+    body:has(input[value="green"]:checked) .container {
+        flex-wrap: nowrap;
+    }
+
+    body:has(input[value="green"]:checked) .item:nth-child(1) {flex: 5;}
+    body:has(input[value="green"]:checked) .item:nth-child(2) {flex: 4;}
+    body:has(input[value="green"]:checked) .item:nth-child(3) {flex: 3;}
+    body:has(input[value="green"]:checked) .item:nth-child(4) {flex: 2;}
+    body:has(input[value="green"]:checked) .item:nth-child(5) {flex: 1;}
+}
+
+@media (max-width: 1000px) {
+    body:has(input[value="green"]:checked) .container {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+    }
+
+    body:has(input[value="green"]:checked) .item:nth-child(1) {width: 100%;}
+    body:has(input[value="green"]:checked) .item:nth-child(2) {width: 80%;}
+    body:has(input[value="green"]:checked) .item:nth-child(3) {width: 60%;}
+    body:has(input[value="green"]:checked) .item:nth-child(4) {width: 40%;}
+    body:has(input[value="green"]:checked) .item:nth-child(5) {width: 20%;}
+}
