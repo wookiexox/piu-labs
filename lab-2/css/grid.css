@@ -23,6 +23,7 @@ main, aside {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    position: relative;
 }
 
 header {
@@ -31,6 +32,7 @@ header {
     display: flex;
     align-items: center;
     gap: 1rem;
+    position: relative;
 }
 
 header .logo {
@@ -51,22 +53,60 @@ header h1 {
     color: white;
     font-size: 1.5rem;
     margin-bottom: 0;
+    flex-grow: 1;
+}
+
+/* hamburger */
+.menu-checkbox {
+    display: none;
+}
+
+.hamburger-icon {
+    display: block;
+    cursor: pointer;
+    font-size: 2rem;
+    color: white;
+    user-select: none;
+    line-height: 1;
+}
+
+.hamburger-icon::before {
+    content: "\2630";
+}
+
+header:has(.menu-checkbox:checked) .hamburger-icon::before {
+    content: "\2715";
 }
 
 nav {
     background-color: #2980b9;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+
+    /* overlay */
+    width: 200px;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: auto;
+    z-index: 1000;
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.container:has(.menu-checkbox:checked) nav {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    padding: 0.5rem;
 }
+
 nav a:hover {
     text-decoration: underline;
 }
@@ -99,7 +139,6 @@ footer {
 }
 
 
-
 /* ==== DESKTOP ==== */
 @media (min-width: 1024px) {
     .container {
@@ -113,11 +152,43 @@ footer {
             "footer footer";
     }
 
-    header {grid-area: header;}
-    nav {grid-area: nav; justify-content: flex-start;}
-    main {grid-area: main;}
-    aside {grid-area: aside;}
-    footer {grid-area: footer;}
+    .hamburger-icon {
+        display: none;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    header h1 {
+        flex-grow: 0;
+    }
+
+    nav {
+        display: flex !important;
+        position: static;
+        width: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        grid-area: nav;
+    }
+
+    main {
+        grid-area: main;
+    }
+
+    aside {
+        grid-area: aside;
+    }
+
+    footer {
+        grid-area: footer;
+    }
 
     aside div {
         display: grid;
