@@ -1,0 +1,128 @@
+/* Reset stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0;
+}
+
+main, aside {
+    h1, h2, h3, p {
+        margin-bottom: 1rem;
+        line-height: 1.5;
+    }
+}
+
+/* ==== MOBILKA FIRST ==== */
+.container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #f39c12;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header .logo {
+    background-color: #fff;
+    color: #333;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .logo::before {
+    content: "Logo";
+    margin-right: 0.5rem;
+}
+
+header h1 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+nav {
+    background-color: #2980b9;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    background-color: white;
+    padding: 2rem;
+    color: #333;
+}
+
+aside {
+    background-color: #d1f2eb;
+    padding: 2rem;
+    color: #333;
+}
+
+aside div {
+    font-size: 3.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+footer {
+    background-color: #27ae60;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+/* ==== DESKTOP ==== */
+@media (min-width: 1024px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header header"
+            "nav nav"
+            "main aside"
+            "footer footer";
+    }
+
+    header {grid-area: header;}
+    nav {grid-area: nav; justify-content: flex-start;}
+    main {grid-area: main;}
+    aside {grid-area: aside;}
+    footer {grid-area: footer;}
+
+    aside div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        justify-items: center;
+    }
+}
