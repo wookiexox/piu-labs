@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Lab 4</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <h1>Lab 4</h1>
-    <a href="..">Powrót</a>
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kanban Board - Lab 4</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/script.js" defer></script>
+    </head>
+    <body>
+        <div class="board-container">
+            <h1>Tablica Kanban</h1>
+            <a href=".." class="back-link">← Powrót</a>
+            
+            <div class="kanban-board">
+                
+                <div class="column" data-id="todo">
+                    <div class="column-header">
+                        <h2>Do zrobienia <span class="counter">(0)</span></h2>
+                        <div class="column-controls">
+                            <button class="btn-sort" title="Sortuj A-Z">Sortuj 🔽</button>
+                            <button class="btn-color-col" title="Pokoloruj wszystkie">🎨 Kolumna</button>
+                        </div>
+                    </div>
+                    <div class="card-list">
+                    </div>
+                    <button class="btn-add">+ Dodaj kartę</button>
+                </div>
+                
+                <div class="column" data-id="inprogress">
+                    <div class="column-header">
+                        <h2>W trakcie <span class="counter">(0)</span></h2>
+                        <div class="column-controls">
+                            <button class="btn-sort" title="Sortuj A-Z">Sortuj 🔽</button>
+                            <button class="btn-color-col" title="Pokoloruj wszystkie">🎨 Kolumna</button>
+                        </div>
+                    </div>
+                    <div class="card-list">
+                    </div>
+                    <button class="btn-add">+ Dodaj kartę</button>
+                </div>
+                
+                <div class="column" data-id="done">
+                    <div class="column-header">
+                        <h2>Zrobione <span class="counter">(0)</span></h2>
+                        <div class="column-controls">
+                            <button class="btn-sort" title="Sortuj A-Z">Sortuj 🔽</button>
+                            <button class="btn-color-col" title="Pokoloruj wszystkie">🎨 Kolumna</button>
+                        </div>
+                    </div>
+                    <div class="card-list">
+                    </div>
+                    <button class="btn-add">+ Dodaj kartę</button>
+                </div>
+            
+            </div>
+        </div>
+    </body>
 </html>
