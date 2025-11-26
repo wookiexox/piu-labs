@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="pl">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Lab 3</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <h1>Lab 3</h1>
-    <a href="..">Powrót</a>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Polo Store</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/polo.css" />
+    </head>
+    <body>
+        <a href=".." class="repo-back-link">← Powrót</a>
+        
+        <input type="radio" name="color" id="color-blue" checked hidden />
+        <input type="radio" name="color" id="color-red" hidden />
+        <input type="radio" name="color" id="color-green" hidden />
+        <input type="radio" name="color" id="color-yellow" hidden />
+        
+        <input type="radio" name="size" id="size-s" hidden />
+        <input type="radio" name="size" id="size-m" checked hidden />
+        <input type="radio" name="size" id="size-l" hidden />
+        <input type="radio" name="size" id="size-xl" hidden />
+        
+        <div class="main-container">
+            
+            <article class="product-card">
+                
+                <div class="product-image-container">
+                    <div class="product-image"></div>
+                </div>
+                
+                <div class="product-details">
+                    <header>
+                        <h1>Koszulka Polo</h1>
+                        <span class="badge">Promocja!</span>
+                    </header>
+                    
+                    <p class="description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+                        quis adipisci maiores.
+                    </p>
+                    
+                    <div class="option-group">
+                        <h3>Kolor</h3>
+                        <div class="color-picker">
+                            <label for="color-blue" class="color-circle blue" title="Niebieski"></label>
+                            <label for="color-red" class="color-circle red" title="Czerwony"></label>
+                            <label for="color-green" class="color-circle green" title="Zielony"></label>
+                            <label for="color-yellow" class="color-circle yellow" title="Żółty"></label>
+                        </div>
+                    </div>
+                    
+                    <div class="option-group">
+                        <h3>Rozmiar</h3>
+                        <div class="size-picker">
+                            <label for="size-s" class="size-box">S</label>
+                            <label for="size-m" class="size-box">M</label>
+                            <label for="size-l" class="size-box">L</label>
+                            <label for="size-xl" class="size-box">XL</label>
+                        </div>
+                    </div>
+                    
+                    <div class="price-section">
+                        <span class="price">59,99 zł</span>
+                        <button class="add-to-cart">🛒 Do koszyka</button>
+                    </div>
+                </div>
+            </article>
+        
+        </div>
+    </body>
 </html>
