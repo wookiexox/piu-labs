@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lab 5: Kształty (Observer)</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script type="module" src="js/app.js"></script>
+    </head>
+    <body>
+        <div class="app-container">
+            <header>
+                <h1>Kształty (Observer Pattern)</h1>
+                <a href=".." class="back-link">← Powrót</a>
+            </header>
+            
+            <section class="controls">
+                <div class="control-group">
+                    <h3>Dodaj</h3>
+                    <button id="add-square" class="btn btn-square">Kwadrat ■</button>
+                    <button id="add-circle" class="btn btn-circle">Kółko ●</button>
+                </div>
+                
+                <div class="control-group">
+                    <h3>Przekoloruj</h3>
+                    <button id="recolor-squares" class="btn btn-action">Kwadraty</button>
+                    <button id="recolor-circles" class="btn btn-action">Kółka</button>
+                </div>
+            </section>
+            
+            <section class="counters">
+                <div class="counter-box">
+                    Liczba kwadratów: <span id="count-square">0</span>
+                </div>
+                <div class="counter-box">
+                    Liczba kółek: <span id="count-circle">0</span>
+                </div>
+            </section>
+            
+            <section id="shapes-container" class="shapes-grid">
+            </section>
+        </div>
+    </body>
+</html>
